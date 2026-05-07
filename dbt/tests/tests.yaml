@@ -1,0 +1,39 @@
+models:
+  
+  - name: stg_deliveries
+    columns:
+      - name: delivery_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_restaurants
+    columns:
+      - name: restaurant_id
+        tests:
+          - not_null
+          - unique 
+
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['cancelled', 'completed']
+
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['cash', 'card', 'wallet']
