@@ -6,6 +6,8 @@ An end-to-end data analytics platform that collect food delivery data, orchestra
 
 This project demonstrates modern data stack best practices by building a scalable ELT pipeline :
 
+![Preview](docs/Data Architecture.png)
+
 ```
 Data Collection
     ↓
@@ -13,14 +15,14 @@ Apache Airflow (Pipeline Orchestration)
     ↓
 BigQuery Ingestion (Raw Layer)
     ↓
-dbt Transformation (Staging → Analytics)
+dbt Transformation (Staging → Mart)
     ↓
 Business Intelligence Dashboards
 ```
 
 ### ✨ Key Features
 
-- **Data Generation**: 30K+ customers, 14K+ restaurants, 760K+ orders with realistic demand patterns
+- **Data Collection**: 30K+ customers, 14K+ restaurants, 760K+ orders
 - **Automated Orchestration**: Apache Airflow DAGs running every 5 minutes with failure handling
 - **Cloud Data Warehouse**: Google BigQuery for scalable, cost-effective analytics
 - **Complete ELT Pipeline**: dbt transformations with staging and analytics layers
@@ -33,10 +35,10 @@ Business Intelligence Dashboards
 
 ```
 Raw Layer (BigQuery: food_delivery_raw)
-├── customers (14,400 records)
-├── restaurants (4,770 records)
-├── orders (255,860+ records)
-└── deliveries (delivery metrics)
+├── customers
+├── restaurants
+├── orders
+└── deliveries
 
 Staging Layer (dbt: food_delivery_staging)
 ├── stg_customers (cleaned, deduplicated)
@@ -74,7 +76,7 @@ Analytics Layer (dbt: food_delivery_analytics)
 - Python 3.12+
 - Google Cloud Platform account with BigQuery enabled
 - Service account JSON credentials for BigQuery access
-- Git
+- Power Bi (or any data visualisation tool)
 
 ### Setup Instructions
 
@@ -110,20 +112,20 @@ Analytics Layer (dbt: food_delivery_analytics)
 
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
-| **Data Generation** | Python (NumPy, Pandas) | Realistic synthetic data with demand patterns |
+| **Data Collection** | Python | Upload data to Bigquery |
 | **Orchestration** | Apache Airflow 2.9.3 | DAG scheduling, monitoring, error handling |
 | **Cloud Data Warehouse** | Google BigQuery | Scalable data storage and SQL querying |
 | **Data Transformation** | dbt (dbt-bigquery) | SQL-based ELT with testing and documentation |
-| **Analytics** | Power BI / Looker | Data visualization and dashboards |
+| **Analytics** | Power BI | Data visualization and dashboards |
 
 ## 📈 Key Metrics & Analytics
 
 The platform enables analysis of:
 
-- **Customer Metrics**: Lifetime value, acquisition cost, retention rate by tier
+- **Customer Metrics**: Lifetime value, acquisition cost, Inactive customers rate
 - **Order Analytics**: Average order value, completion rate, revenue trends
-- **Delivery Performance**: Average delivery time, distance coverage, driver ratings
-- **Restaurant Health**: Order volume, rating trends, cuisine popularity
+- **Delivery Performance**: Average delivery time, distance coverage, ratings
+- **Restaurant Health**: Order volume, demand trends, cuisine popularity
 - **Demand Patterns**: Peak hours analysis, zone-based demand, seasonality
 
 ## 📝 Data Models Reference
@@ -160,6 +162,8 @@ This project demonstrates key concepts from:
 ## 📊 Dashboard Integration
 
 Once the pipeline is running, connect your BI tool (Power BI, Looker, Tableau) to the `food_delivery_analytics` dataset in BigQuery to create dashboards. Key tables to visualize:
+
+![Dashboard Preview](docs/Dashboard.png)
 
 - `fct_orders` - Sales trends, order metrics, performance KPIs
 - `dim_customers` + `fct_orders` - Customer segmentation and lifetime value
