@@ -6,7 +6,7 @@ An end-to-end data analytics platform that collect food delivery data, orchestra
 
 This project demonstrates modern data stack best practices by building a scalable ELT pipeline :
 
-![Preview](https://github.com/RayenHasni/Food_Delivery_Analytics/blob/main/docs/Data%20Arch.gif)
+![Preview](https://github.com/RayenHasni/Food_Delivery_Analytics/blob/main/docs/Architecture.gif)
 
 ```
 Data Collection
@@ -159,9 +159,9 @@ This project demonstrates key concepts from:
 - [BigQuery Documentation](https://cloud.google.com/bigquery/docs) - Data warehouse best practices
 - [dbt BigQuery Adapter](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup) - Configuration
 
-## 📊 Dashboard Integration
+## 📊 BI & Analytics [(Link)](https://app.powerbi.com/view?r=eyJrIjoiN2Y2ZGFmZjYtODcxOS00YTFmLWFhMzgtMjUxMWI5YzU0ZWIyIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9)
 
-Once the pipeline is running, connect your BI tool (Power BI, Looker, Tableau) to the `food_delivery_analytics` dataset in BigQuery to create dashboards. Key tables to visualize:
+Once the pipeline is running, connect your BI tool (Power BI, Looker, Tableau) to the `food_delivery_analytics` dataset in BigQuery to create dashboards. Key tables to visualize: 
 
 ![Dashboard Preview](https://github.com/RayenHasni/Food_Delivery_Analytics/blob/main/docs/Dashboard.png)
 
