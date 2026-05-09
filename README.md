@@ -6,7 +6,7 @@ An end-to-end data analytics platform that collect food delivery data, orchestra
 
 This project demonstrates modern data stack best practices by building a scalable ELT pipeline :
 
-![Preview](docs/Data Architecture.png)
+[Preview]([docs/Data Architecture.png](https://github.com/RayenHasni/Food_Delivery_Analytics/blob/a213255a2d9e3a58501893e1ac492f9f4b46de95/docs/Data%20Arch.gif))
 
 ```
 Data Collection
