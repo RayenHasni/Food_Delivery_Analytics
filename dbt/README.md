@@ -1,10 +1,20 @@
 Welcome dbt project!
 
-### Using the starter project
+## 🚀 Quick Start
 
-Try running the following commands:
-- dbt run
-- dbt test
+Try running the following command:
+- `dbt build` (or `dbt run` then `dbt test`)
+
+Generate interactive dbt documentation locally:
+
+- `dbt docs generate`
+- `dbt docs serve`
+
+---
+## 🔀 Data Flow
+
+![Preview](https://github.com/RayenHasni/Food_Delivery_Analytics/blob/main/docs/Data%20Flow.gif)
+
 
 ## 📝 Data Models Reference
 
@@ -19,6 +29,21 @@ Try running the following commands:
 - `dim_customers.sql`: Customer dimension 
 - `dim_restaurants.sql`: Restaurant dimension 
 - `dim_dates.sql`: Date dimension for time series analysis
+
+---
+
+## 🛠️ Data Quality & Testing
+
+Data quality is enforced through automated dbt tests integrated into the deployment workflow.
+
+### Included Tests
+
+- `not_null`
+- `unique`
+- `relationships`
+- `accepted_values`
+
+---
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
